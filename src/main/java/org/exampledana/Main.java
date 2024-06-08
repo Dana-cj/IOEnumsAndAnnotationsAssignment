@@ -9,7 +9,7 @@ public class Main {
         Biathlon biathlon=new Biathlon();
         try {
             BufferedReader br = new BufferedReader( new FileReader( "src/main/results.csv" ) );
-            System.out.println(br.readLine());
+            br.readLine();
 //            Scanner scan= new Scanner(new File("src/main/results.csv"));
 //             scan.nextLine();
             String string= "";
@@ -17,7 +17,7 @@ public class Main {
                //string= scan.readLine();
                biathlon.addAthleteResultsFromFile(string);
             }
-            System.out.println(biathlon);
+           // System.out.println(biathlon);
         } catch (IOException e) {
             System.out.println("CSV file not found!");
         }
