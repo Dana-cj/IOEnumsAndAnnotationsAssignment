@@ -14,7 +14,7 @@ public class BiathlonTest {
     }
 
     @Test
-   // @CsvSource(value = {"11,Umar Jorgson,SK,30:27,xxxox,xxxxx,xxoxo", "1,Jimmy Smiles,UK,29:15,xxoox,xooxo,xxxxo", "27,Piotr Smitzer,CZ,30:10,xxxxx,xxxxx,xxxxx"}, delimiter = '&')
+
     public void parsingCsvFileWorks(){
         Biathlon biathlon1=new Biathlon(){};
         biathlon1.addNewAthlete("11","Umar Jorgson","SK","30:27","xxxox","xxxxx","xxoxo");
@@ -28,11 +28,7 @@ public class BiathlonTest {
 
         Assert.assertEquals(biathlon1.getBiathlonResults(),biathlonTest.getBiathlonResults());
     }
-    public Biathlon createBiathlonInput(){
-        Biathlon biathlon1=new Biathlon(){};
-        biathlon1.addNewAthlete("11","Umar Jorgson","SK","30:27","xxxox","xxxxx","xxoxo");
-        return biathlon1;
-    }
+
     @ParameterizedTest
     @CsvSource(value = {"11,Umar Jorgson,SK,30:27,xxxox,xxxxx,xxoxo"}, delimiter = '&')
     public void parametrizedParsingCsvFileWorks(String string){

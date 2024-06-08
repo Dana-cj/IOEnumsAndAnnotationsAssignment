@@ -13,8 +13,7 @@ public class Athlete implements Serializable, Comparable<Athlete>{
     private String firstShooting;
     private String secondShooting;
     private String thirdShooting;
-    public Athlete(){
-     }
+
     public Athlete(String athleteNumber, String name, String countryCode, String skiTimeResult, String firstShooting, String secondShooting, String thirdShooting) {
         this.athleteNumber= Integer.parseInt(athleteNumber);
         this.name = name;
