@@ -19,16 +19,19 @@ public class Biathlon implements Serializable {
         biathlonResults.add(new Athlete(athleteNumber, name, countryCode, stringSkiTimeResult, firstShooting, secondShooting, thirdShooting));
     }
 
-   public void addAthleteResultsFromFile(String string) {
-        String[] athlete= string.split(",");
-        String athleteNumber= athlete[0].trim();
-        String name=athlete[1].trim();
-        String countryCode= athlete[2].toUpperCase().trim();
-        String skiTimeResult= athlete[3].trim();
-        String firstShooting= athlete[4].trim();
-        String secondShooting= athlete[5].trim();
-        String thirdShooting = athlete[6].trim();
-        addNewAthlete(athleteNumber,name,countryCode,skiTimeResult,firstShooting,secondShooting,thirdShooting);
+   public void addAthleteResultsFromFile(String stringResults) {
+        String[] athletes= stringResults.split("\n");
+       for (String string:athletes) {
+           String[] athlete= string.split(",");
+           String athleteNumber= athlete[0].trim();
+           String name=athlete[1].trim();
+           String countryCode= athlete[2].toUpperCase().trim();
+           String skiTimeResult= athlete[3].trim();
+           String firstShooting= athlete[4].trim();
+           String secondShooting= athlete[5].trim();
+           String thirdShooting = athlete[6].trim();
+           addNewAthlete(athleteNumber,name,countryCode,skiTimeResult,firstShooting,secondShooting,thirdShooting);
+       }
     }
     public void findAndPrintPodiumWinners(){
         Set<Athlete> winners= new TreeSet<>(biathlonResults);

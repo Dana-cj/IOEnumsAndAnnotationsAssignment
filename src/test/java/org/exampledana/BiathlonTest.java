@@ -21,11 +21,9 @@ public class BiathlonTest {
         biathlon1.addNewAthlete("1","Jimmy Smiles","UK","29:15","xxoox","xooxo","xxxxo");
         biathlon1.addNewAthlete("27","Piotr Smitzer","CZ","30:10","xxxxx","xxxxx","xxxxx");
 
+        String stringResultsTest="11,Umar Jorgson,SK,30:27,xxxox,xxxxx,xxoxo\n"+"1,Jimmy Smiles,UK,29:15,xxoox,xooxo,xxxxo\n"+"27,Piotr Smitzer,CZ,30:10,xxxxx,xxxxx,xxxxx\n";
         Biathlon biathlonTest= new Biathlon();
-        biathlonTest.addAthleteResultsFromFile("11,Umar Jorgson,SK,30:27,xxxox,xxxxx,xxoxo");
-        biathlonTest.addAthleteResultsFromFile("1,Jimmy Smiles,UK,29:15,xxoox,xooxo,xxxxo");
-        biathlonTest.addAthleteResultsFromFile("27,Piotr Smitzer,CZ,30:10,xxxxx,xxxxx,xxxxx");
-
+        biathlonTest.addAthleteResultsFromFile(stringResultsTest);
         Assert.assertEquals(biathlon1.getBiathlonResults(),biathlonTest.getBiathlonResults());
     }
 
